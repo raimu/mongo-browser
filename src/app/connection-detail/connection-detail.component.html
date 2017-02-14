@@ -1,0 +1,13 @@
+<div *ngIf="connection">
+  <div>
+    <label>id: </label>{{connection._id}}</div>
+  <div>
+    <label>name: </label>
+    <input [(ngModel)]="connection.name" placeholder="name" />
+  </div>
+  <div>
+    <label>connection-string: </label>
+    <input [(ngModel)]="connection.connection" placeholder="connection-string" />
+  </div>
+  <button (click)="save()">Save</button>
+</div>
