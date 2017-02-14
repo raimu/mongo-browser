@@ -4,6 +4,8 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app-routing.module';
+
 import { ConnectionsComponent } from './connections/connections.component';
 import { ConnectionService } from './connection.service';
 import { ConnectionDetailComponent } from './connection-detail/connection-detail.component';
@@ -17,7 +19,8 @@ import { ConnectionDetailComponent } from './connection-detail/connection-detail
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    AppRoutingModule
   ],
   providers: [
     ConnectionService
