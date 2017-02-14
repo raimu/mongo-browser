@@ -17,6 +17,11 @@ export class ConnectionsComponent implements OnInit {
     this.getConnections();
   }
 
+  create() {
+    const connection = new Connection();
+    this.connectionService.create(connection);
+  }
+
   private getConnections() {
     this.connectionService.getConnections()
       .then(connections => this.connections = connections);
