@@ -18,4 +18,9 @@ export class ConnectionDetailComponent {
     this.connectionService.save(this.connection)
       .then(response => this.connection._rev = response.rev);
   }
+
+  delete() {
+    this.connectionService.delete(this.connection)
+      .then(response => this.connection = null);
+  }
 }

@@ -20,14 +20,18 @@ export class ConnectionService {
     return Promise.resolve(result);
   }
 
-  create(item: Connection): Promise<Connection> {
-    item._id = this.generateNewId();
-    this.db.put(item);
-    return Promise.resolve(item);
+  create(connection: Connection): Promise<Connection> {
+    connection._id = this.generateNewId();
+    this.db.put(connection);
+    return Promise.resolve(connection);
   }
 
   save(connection: Connection): Promise<PouchDB.Core.Response> {
     return this.db.put(connection);
+  }
+
+  delete(connection: Connection): Promise<PouchDB.Core.Response> {
+    return this.db.remove(<PouchDB.Core.RemoveDocument>connection);
   }
 
   private generateNewId(): string {
